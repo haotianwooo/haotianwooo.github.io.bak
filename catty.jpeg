@@ -1,0 +1,220 @@
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="天码营聚集优秀开发者，提供技术问答、经验分享和系统化的课程指导等服务，帮助程序员在学习和职业生涯中快速成长，沉淀知识，实现个人价值。">
+<meta name="keywords" content="天码营,问答,技术博客,开发经验,TCoder,开发者,程序员,代码片段,编程训练营,Leetcode,springboot">
+
+<meta name="author" content="TMY">
+<link rel="shortcut icon" href="http://static.tianmaying.com/favicon.ico">
+
+<link rel="stylesheet" href="http://assets0.tianmaying.com/css/tmy.7f174d293699100497a76040263877e1.css">
+
+<script src="http://assets0.tianmaying.com/js/tmy.45fa540bbdaf8535cff7db43984becdb.js"></script>
+
+<script type='text/javascript'>
+  var _vds = _vds || [];
+  window._vds = _vds;
+  (function() {
+    _vds.push(['setAccountId', '73bcd6f434fb451f99f5b6abbf964d7f']);
+    (function() {
+      var vds = document.createElement('script');
+      vds.type = 'text/javascript';
+      vds.async = true;
+      vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(vds, s);
+    })();
+  })();
+</script>
+
+
+  <title>登录 | 天码营 - 最懂互联网开发者的技术学习服务平台</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <div class="navbar navbar-inverse navbar-static-top" id="tmy-navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="http://assets0.tianmaying.com/img/logo/logo.png">
+          天码营
+        </a>
+      </div>
+      <div class="navbar-collapse collapse" id="nav-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/account/login?next=http%3A%2F%2Fcourse.tianmaying.com%2Fnode%2Flesson%2Fbootstrap%2Frepo%2Fblob%2Fbootstrap%2Fcatty.jpeg">登录</a></li>
+  <li><a href="/account/register?next=http%3A%2F%2Fcourse.tianmaying.com%2Fnode%2Flesson%2Fbootstrap%2Frepo%2Fblob%2Fbootstrap%2Fcatty.jpeg">注册</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div id="account" class="container-fluid" data-app="accountApp">
+    <div class="
+      col-lg-4 col-lg-offset-4
+      col-md-5 col-md-offset-3
+      col-sm-6 col-sm-offset-3
+      col-xs-12
+      ">
+      <div class="tmy-panel tmy-panel-bordered">
+          <form name="loginForm" class="loginForm" id="login-page" ng-controller="loginCtrl" ng-submit="login()" ng-cloak  data-js="account/loginInWechat">
+    <h3 class="form-header">登录到天码营</h3>
+    <hr>
+    <fieldset>
+      <div class="form-group">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon">
+            <i class="fa fa-user"></i>
+          </span>
+          <input id="username" name="username" type="text" placeholder="用户名" class="form-control input-md"
+                 required autofocus
+                 ng-model="user.username">
+        </div>
+
+        <div class="alert alert-danger"
+             ng-show="loginForm.username.$error.required && loginForm.username.$dirty">
+          用户名不能为空
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon">
+            <i class="fa fa-lock"></i>
+          </span>
+          <input id="password" name="password" type="password" placeholder="密码" class="form-control input-md"
+                 required
+                 ng-model="user.password">
+        </div>
+        <div class="alert alert-danger"
+             ng-show="loginForm.password.$error.required && loginForm.password.$dirty">
+          密码不能为空
+        </div>
+      </div>
+      <div class="form-group form-btns">
+        <div class="alert alert-danger" ng-show="msg" ng-bind="msg"></div>
+        <div class="pull-right">
+          <a class="btn btn-default btn-sm btn-wide" href="/account/register?next=http%3A%2F%2Fcourse.tianmaying.com%2Fnode%2Flesson%2Fbootstrap%2Frepo%2Fblob%2Fbootstrap%2Fcatty.jpeg">注册</a>
+          <button class="btn btn-primary btn-sm btn-wide" ng-hide="busy" type="submit">登录</button>
+          <a class="btn btn-primary btn-sm btn-wide" ng-show="busy" disabled>
+            <i class="fa fa-spinner fa-spin"></i> 正在登录
+          </a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="oauth-block">
+        <span class="title">快速登录：</span>
+        <a href="https://github.com/login/oauth/authorize?client_id=a1f0cd59f8c429b185ec&amp;redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fgithub%2Fcallback&amp;state=1h8k68be244kxdeb2k91he2040bdedd1230f40817feeekjm">
+          <i class="fa fa-github"></i>
+        </a>
+        <a href="https://api.weibo.com/oauth2/authorize?client_id=1502829444&amp;redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fweibo%2Fcallback&amp;response_type=code">
+          <i class="fa fa-weibo"></i>
+        </a>
+        <a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=101236133&amp;redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fqq%2Fcallback&amp;state=1h8k68be244kxdeb2k91he2040bdedd1230f40817feeekjm">
+          <i class="fa fa-qq"></i>
+        </a>
+        <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wx10e769bce8def9bb&redirect_uri=http%3A%2F%2Ftianmaying.com%2Foauth%2Fweixin%2Fcallback&response_type=code&state=esfadsgsad34fwdef&scope=snsapi_login#wechat_redirect">
+          <i class="fa fa-wechat"></i>
+        </a>
+      </div>
+    </fieldset>
+    <hr>
+    <h4 class="subtitle">忘记密码？</h4>
+
+    <p class="text-muted">如果你忘记了密码，请
+      <a href="/account/forgot">点击此处</a>
+      重置您的密码。
+    </p>
+  </form>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="credit text-muted " data-app="utils">
+  <div id="footer-content" class="container">
+    <span>Copyright Tianmaying © 2015</span>
+    <span class="hidden-xs">
+      |
+      <span>京ICP备15008133号-1</span>
+      |
+      <a data-container="body" data-toggle="popover" data-html="true"
+         data-placement="top" data-trigger="hover" class="link"
+         data-content='
+           &lt;div&gt;
+             &lt;img src=&quot;http://assets0.tianmaying.com/img/qrcode-winxin.jpg&quot;
+               style=&quot;width:150px;height:150px;&quot;&gt;
+           &lt;/div&gt;
+         '>
+        <i class="fa fa-wechat"></i>
+        TMY-EDU
+      </a>
+      |
+      <a href="http://shang.qq.com/wpa/qunwpa?idkey=6cbe9f8835aa1aa6c62f4bceb585d415b9a7f710c4e7f0b20e424905cf3f7e27"
+         data-container="body" data-toggle="popover" data-html="true"
+         data-placement="top" data-trigger="hover" class="link"
+         data-content='
+           &lt;div&gt;
+             &lt;img style=&quot;width: 150px; height: 150px;&quot; src=&quot;http://assets0.tianmaying.com/img/qrcode-qq.png&quot;/&gt;
+           &lt;/div&gt;
+         '>
+        <i class="fa fa-qq"></i>
+        231216939
+      </a>
+      |
+      <a href="http://weibo.com/u/5623427244" target="_blank" class="link">
+        <i class="fa fa-weibo"></i>
+        天码营
+      </a>
+      |
+      <a href="/terms-of-service" target="_blank" class="link">服务条款</a>
+      |
+      <a href="/blog" target="_blank" class="link">官方博客</a>
+      |
+      <a class="link" href="/links" target="_blank">友情链接</a>
+    </span>
+  </div>
+
+
+</footer>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script>
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-58871862-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
